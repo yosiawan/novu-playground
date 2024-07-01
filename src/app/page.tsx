@@ -32,23 +32,12 @@ export default function Home() {
           fetchNotifications: true,
           fetchUnseenCount: true,
         }}
-        stores={[{ storeId: "govmart", query: { feedIdentifier: "govmart" } }]}
+        stores={[
+          { storeId: "govmart", query: { feedIdentifier: "govmart" } },
+          { storeId: "trigger", query: { feedIdentifier: "trigger" } },
+        ]}
       >
         <Lama />
-      </NovuProvider>
-      <NovuProvider
-        applicationIdentifier={NOVU_CONFIGURATION.novuAppId}
-        backendUrl={NOVU_CONFIGURATION.novuBackendUrl}
-        socketUrl={NOVU_CONFIGURATION.novuSocketUrl}
-        subscriberId={subscriberId}
-        subscriberHash={subscriberHash}
-        i18n="id"
-        initialFetchingStrategy={{
-          fetchNotifications: true,
-          fetchUnseenCount: true,
-        }}
-        stores={[{ storeId: "trigger", query: { feedIdentifier: "trigger" } }]}
-      >
         <Baru />
       </NovuProvider>
     </div>
