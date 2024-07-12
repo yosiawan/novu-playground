@@ -1,13 +1,13 @@
 import { useFetchNotifications } from "@novu/notification-center";
 
-export default function Lama() {
+export default function Baru() {
   const { data } = useFetchNotifications({
     query: { feedIdentifier: "govmart" },
   });
 
   return (
-    <div className="m-4 bg-red-300">
-      Data Lama:
+    <div className="m-4 bg-green-300">
+      Trigger Feed Data:
       <div>
         {data?.pages.map((page) =>
           page.data.map((data, idx) => (

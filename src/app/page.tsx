@@ -1,8 +1,8 @@
 "use client";
 
 import { NovuProvider } from "@novu/notification-center";
-import Lama from "./Lama";
-import Baru from "./Baru";
+import GovmartFeeds from "./GovmartFeeds";
+import TriggerFeeds from "./TriggerFeeds";
 
 const NOVU_CONFIGURATION: {
   novuAppId: string;
@@ -34,7 +34,7 @@ export default function Home() {
         }}
         stores={[{ storeId: "govmart", query: { feedIdentifier: "govmart" } }]}
       >
-        <Lama />
+        <GovmartFeeds />
       </NovuProvider>
       <NovuProvider
         applicationIdentifier={NOVU_CONFIGURATION.novuAppId}
@@ -49,7 +49,7 @@ export default function Home() {
         }}
         stores={[{ storeId: "trigger", query: { feedIdentifier: "trigger" } }]}
       >
-        <Baru />
+        <TriggerFeeds />
       </NovuProvider>
     </div>
   );
